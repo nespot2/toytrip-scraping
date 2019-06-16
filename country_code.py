@@ -35,5 +35,5 @@ head, *tail = tr
 
 result = map(soup_to_dict, tail)
 
-# with open("country_code", "w") as f:
-#     f.write("\n".join(result))
+with open("country_code", "w") as f:
+     f.write("\n".join(result))
