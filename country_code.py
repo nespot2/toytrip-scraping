@@ -1,3 +1,9 @@
+"""
+@author : nespot2
+위키피디아에서 국가코드 데이터 크롤링 후 파일에 저장하는 code
+"""
+
+
 import requests
 from bs4 import BeautifulSoup
 
