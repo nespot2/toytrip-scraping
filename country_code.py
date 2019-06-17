@@ -3,20 +3,10 @@
 위키피디아에서 국가코드 데이터 크롤링 후 파일에 저장하는 code
 """
 
-
-import requests
+from common_def import get_html
+from common_def import list_to_str
+from common_def import write_file
 from bs4 import BeautifulSoup
-
-
-def get_html(url):
-    resp = requests.get(url)
-    if resp.status_code == 200:
-        return resp.text
-    return ""
-
-
-def list_to_str(gen):
-    return "|".join(gen)
 
 
 def soup_to_dict(soup):
@@ -35,5 +25,4 @@ head, *tail = tr
 
 result = map(soup_to_dict, tail)
 
-with open("country_code", "w") as f:
-     f.write("\n".join(result))
+write_file("country_code", result)
