@@ -23,6 +23,7 @@ def list_to_str(gen):
 
 
 def write_file(filename, result):
+    result = [i for i in result if i]
     with open(filename, "w", encoding='UTF8') as f:
         f.write("\n".join(result))
 
